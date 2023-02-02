@@ -1,6 +1,10 @@
 name: deply and test
 
 
+permissions:
+  contents: write
+
+
 on:
   push:
     branches: 
