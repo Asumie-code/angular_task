@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "deploy": "gh-pages -d dist",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
