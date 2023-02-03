@@ -1,0 +1,23 @@
+<h2>Blogs</h2>
+
+
+<div *ngFor="let blog of blogs"> 
+  <h3>
+    {{blog.title}}
+  </h3>
+
+  <p *ngIf="blog.content">
+    Content: {{ blog.content}}
+    <a [routerLink]="['/blogs', blog.id]">continue reading</a>
+  </p>
+
+  <button type="button" (click)="upVote()"> 
+    up vote {{ blog.upVote}}
+  </button>
+
+  <button type="button" (click)="downVote()"> 
+    down vote {{ blog.downVote}}
+  </button>
+
+
+</div>
