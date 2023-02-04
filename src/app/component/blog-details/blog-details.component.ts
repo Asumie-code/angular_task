@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { blogs } from 'src/app/blogs';
+import { Blog } from 'src/app/blogs';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'app-blog-details',
@@ -9,21 +10,22 @@ import { blogs } from 'src/app/blogs';
 })
 export class BlogDetailsComponent implements OnInit {
 
-  blog = blogs[0]
-  constructor(private route: ActivatedRoute) { }
+  blogId: number = 0 
+  blog!: Blog
+  constructor (
+    private route: ActivatedRoute, 
+    public blogService: BlogService
+    ) { }
 
   ngOnInit(): void {
       const routeParams =  this.route.snapshot.paramMap
-      const blogId = Number(routeParams.get('blogId'))
+       this.blogId = Number(routeParams.get('blogId'))
+       this.blogService.getBlog(this.blogId).subscribe((data) => {
+        this.blog = data 
+        
+      })
       
 
   }
 
-  upVote() {
-
-  }
-
-  downVote() {
-    
-  }
 }

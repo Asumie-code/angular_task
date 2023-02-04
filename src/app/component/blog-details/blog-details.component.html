@@ -1,4 +1,5 @@
-<div>
+<h3 *ngIf="!blog">loading....</h3>
+<div *ngIf="blog">
   
   <h1>
     {{blog.title}}
@@ -8,14 +9,18 @@
      {{ blog.content}}
   
   </p>
+
+  <p>
+    author: {{blog.author}}
+  </p>
 </div>
 
-  <button type="button" (click)="upVote()"> 
-    up vote {{ blog.upVote}}
+  <button *ngIf="blog" type="button" (click)="this.blogService.upVote(this.blogId)"> 
+    up vote {{ blog.upvote}}
   </button>
 
-  <button type="button" (click)="downVote()"> 
-    down vote {{ blog.downVote}}
+  <button  *ngIf="blog" type="button" (click)="this.blogService.downVote(this.blogId)">  
+    down vote {{ blog.downvote}}
   </button>
 
 

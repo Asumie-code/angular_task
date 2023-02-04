@@ -1,22 +1,27 @@
 <h2>Blogs</h2>
 
+<h3 *ngIf="!blogs">loading...</h3>
 
 <div *ngFor="let blog of blogs"> 
   <h3>
     {{blog.title}}
   </h3>
 
-  <p *ngIf="blog.content">
+  <p>
     Content: {{ blog.content}}
     <a [routerLink]="['/blogs', blog.id]">continue reading</a>
   </p>
 
-  <button type="button" (click)="upVote()"> 
-    up vote {{ blog.upVote}}
+  <p>
+    author: {{blog.author}}
+  </p>
+
+  <button type="button" (click)="this.blogService.upVote(blog.id)"> 
+    up vote {{ blog.upvote}}
   </button>
 
-  <button type="button" (click)="downVote()"> 
-    down vote {{ blog.downVote}}
+  <button type="button" (click)="this.blogService.downVote(blog.id)">
+    down vote {{ blog.downvote}}
   </button>
 
 
