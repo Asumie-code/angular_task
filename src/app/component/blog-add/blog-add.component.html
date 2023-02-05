@@ -1,6 +1,6 @@
 <h1>Add A Blog Post</h1>
 
-<div>
+<div >
     <label for="author">Author: </label>
     <input id="author" type="text" [formControl]="author">
     
@@ -8,8 +8,8 @@
     <input id="title" type="text" [formControl]="title">
     
     <label for="content">Content: </label>
-    <textarea id="content" type="text" [formControl]="content" ></textarea>
+    <textarea id="content" type="text" [formControl]="content" ></textarea>    
 </div>
 
+<button  (click)="this.blogService.addBlogPost(title.value, content.value, author.value)">Add</button>
 
-<button>Add</button>

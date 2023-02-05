@@ -8,8 +8,19 @@ a {
 
 
 div { 
-    border: 2px solid red; 
+    
     margin: 20px; 
     padding: 20px; 
    
 }
+
+
+.green { 
+    border: 2px solid green; 
+}
+
+
+.red { 
+    border: 2px solid red; 
+}
+

@@ -2,7 +2,11 @@
 
 <h3 *ngIf="!blogs">loading...</h3>
 
-<div *ngFor="let blog of blogs"> 
+<div 
+  [class.green]="blog.upvote > blog.downvote" 
+  [class.red]="blog.upvote < blog.downvote" 
+  *ngFor="let blog of blogs"
+  > 
   <h3>
     {{blog.title}}
   </h3>
