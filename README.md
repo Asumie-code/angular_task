@@ -1,3 +1,20 @@
+# About the app 
+
+
+
+- the app fetches uses Mockaroo api to fetch random blog post data. 
+- main page fetches blogs and display them as a list of blogs. 
+- each blog has two buttons upvote, downvote and a link directing to blog detail page. 
+
+- used a service to handle fetching, posting, upvote, downvote
+
+
+
+
+
+
+
+
 # AngularTask
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
