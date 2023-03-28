@@ -29,47 +29,5 @@ export class ImageService {
     return `https://picsum.photos/id/${id}/${size}/${size}` 
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   // the normal behavior is to implement a post request to update the votes and post blogs. 
-   // console.log just for demo 
-  upVote(blogId: number) {
-    
-    console.log(`blog ${blogId} has been upvoted`)
-  }
-
-  downVote(blogId: number) { 
-    console.log(`blog ${blogId} has been downvoted`)
-    
-  }
-
-  addBlogPost(title: string | null, content: string | null, author: string | null ) {
-    if(title  && content && author) {
-        const blog = {
-          title, 
-          content, 
-          author, 
-        }
-
-        console.log('added', blog)
-        this.router.navigate(['/'])
-      } else {
-        alert('please fill in fields')
-      }
-  }
+  
 }
