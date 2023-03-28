@@ -6,19 +6,19 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlogListComponent } from './component/blog-list/blog-list.component';
-import { BlogDetailsComponent } from './component/blog-details/blog-details.component';
-import { BlogAddComponent } from './component/blog-add/blog-add.component';
+import { ImageListComponent } from './component/image-list/image-list.component';
+import { ImageDetailsComponent } from './component/image-details/image-details.component';
 import { TopBarComponent } from './component/top-bar/top-bar.component';
+import { FavoritesComponent } from './component/favorites/favorites.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlogListComponent,
-    BlogDetailsComponent,
-    BlogAddComponent,
+    ImageListComponent,
+    ImageDetailsComponent,
     TopBarComponent,
+    FavoritesComponent
 
   ],
   imports: [

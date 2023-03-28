@@ -1,0 +1,31 @@
+<h3 *ngIf="!image">loading....</h3>
+<div *ngIf="image">
+  
+  <div class="img_container">
+     <img [src]="image.download_url">
+  </div>
+
+  <p>
+    author: {{image.author}}
+  </p>
+
+  <p>
+    details: 
+      width {{image.width}}
+      height {{image.height}}
+  </p>
+
+  <p>
+    <a [href]="image.url">source</a>
+  </p>
+</div>
+
+  <button > 
+    add to favorites 
+  </button>
+
+
+
+
+
+

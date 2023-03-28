@@ -1,0 +1,28 @@
+<h2>images</h2>
+
+<h3 *ngIf="!images">loading...</h3>
+<div 
+  class="container"
+  
+>
+
+  <div 
+    *ngFor="let image of images"
+    > 
+
+    <img [src]="this.imageService.getThumbnail(400, image.id)" alt="">
+  
+    <p>
+      <a [routerLink]="['/images', image.id]">details...</a> 
+    </p>
+  
+    <p>
+      author: {{image.author}} 
+    </p>
+  
+    <button type="button" > 
+      Add to favorites
+    </button> 
+  
+  </div>
+</div>

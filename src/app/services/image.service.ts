@@ -1,33 +1,51 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Blog } from '../blogs';
+import { Blog, Image } from '../images';
+
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlogService {
-    apiUrl = 'https://my.api.mockaroo.com/'
+export class ImageService {
+    apiUrl = 'https://picsum.photos/'
   constructor(private http: HttpClient, private router: Router) { }
 
 
-  getBlogs() {
-      return this.http.get<Blog>(`${this.apiUrl}blog.json`, {
-        headers: {
-          "X-API-Key": "803a3430"
-        }
-      })
+  getImages(page: number, limit: number = 9) {
+      return this.http.get<Image>(`${this.apiUrl}/v2/list?page=${page}&limit=${limit}`)
   }
 
 
-  getBlog(id: number) { 
-    return  this.http.get<Blog>(`${this.apiUrl}/blog/${id}.json`,{
-      headers: {
-        "X-API-Key": "803a3430"
-
-      }
-    })
+  getImage(id: number) { 
+    return  this.http.get<Image>(`${this.apiUrl}/id/${id}/info`)
   }
+
+
+
+
+
+  getThumbnail(size: number, id: number) {
+    return `https://picsum.photos/id/${id}/${size}/${size}` 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    // the normal behavior is to implement a post request to update the votes and post blogs. 
    // console.log just for demo 
   upVote(blogId: number) {

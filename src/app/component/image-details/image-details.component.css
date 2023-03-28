@@ -1,0 +1,14 @@
+
+div, button {
+    margin: 10px; 
+    
+}
+
+.img_container {
+    width: 1000px;
+    padding: 10px;
+}
+
+.img_container img {
+    width: 100%;
+}
