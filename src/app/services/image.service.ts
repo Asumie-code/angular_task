@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Blog, Image } from '../images';
+import { Image } from '../images';
 
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class ImageService {
 
 
   getImages(page: number, limit: number = 9) {
-      return this.http.get<Image>(`${this.apiUrl}/v2/list?page=${page}&limit=${limit}`)
+      return this.http.get<Image[]>(`${this.apiUrl}/v2/list?page=${page}&limit=${limit}`)
   }
 
 
@@ -25,7 +25,7 @@ export class ImageService {
 
 
 
-  getThumbnail(size: number, id: number) {
+  getThumbnail(size: number, id: string) {
     return `https://picsum.photos/id/${id}/${size}/${size}` 
   }
 

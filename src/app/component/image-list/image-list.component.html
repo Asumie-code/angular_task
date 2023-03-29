@@ -1,28 +1,30 @@
 <h2>images</h2>
-
+<input type="text" placeholder="Filter Images"  (input)="filterImages()"  [(ngModel)]="filterValue"  />
 <h3 *ngIf="!images">loading...</h3>
-<div 
-  class="container"
-  
->
 
-  <div 
-    *ngFor="let image of images"
-    > 
+<ng-template #filtered>
+  <div class="container">
+    <div>
+      <img [src]="this.imageService.getThumbnail(400, filteredImage.id)" alt="" />
+      <p>
+        <a [routerLink]="['/images', filteredImage.id]">details...</a>
+      </p>
 
-    <img [src]="this.imageService.getThumbnail(400, image.id)" alt="">
-  
+      <p>author: {{ filteredImage.author }}</p>
+
+      <button type="button">Add to favorites</button>
+    </div>
+  </div>
+</ng-template>
+<div class="container" *ngIf="!filter; else filtered">
+  <div *ngFor="let image of images">
+    <img [src]="this.imageService.getThumbnail(400, image.id)" alt="" />
     <p>
-      <a [routerLink]="['/images', image.id]">details...</a> 
+      <a [routerLink]="['/images', image.id]">details...</a>
     </p>
-  
-    <p>
-      author: {{image.author}} 
-    </p>
-  
-    <button type="button" > 
-      Add to favorites
-    </button> 
-  
+
+    <p>author: {{ image.author }}</p>
+
+    <button type="button">Add to favorites</button>
   </div>
 </div>
