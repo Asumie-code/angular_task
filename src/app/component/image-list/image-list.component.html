@@ -12,7 +12,8 @@
 
       <p>author: {{ filteredImage.author }}</p>
 
-      <button type="button">Add to favorites</button>
+      <button type="button" (click)="this.imageService.addToFav(filteredImage)">Add to favorites</button>
+      <button type="button" (click)="this.imageService.removeFromFav(filteredImage.id)">remove from favorites</button>
     </div>
   </div>
 </ng-template>
@@ -25,6 +26,7 @@
 
     <p>author: {{ image.author }}</p>
 
-    <button type="button">Add to favorites</button>
+    <button type="button" (click)="this.imageService.addToFav(image)">Add to favorites</button>
+    <button type="button" (click)="this.imageService.removeFromFav(image.id)">remove from favorites</button>
   </div>
 </div>

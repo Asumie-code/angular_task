@@ -1,4 +1,17 @@
-<h1>Add A Blog Post</h1>
+<h1>Favorites</h1>
+
+<div class="container">
+    <div *ngFor="let image of favImages; let i = index">
+        <img [src]="this.imageService.getThumbnail(400, image.id)" alt="" />
+        <p>
+          <a [routerLink]="['/images', image.id]">details...</a>
+        </p>
+    
+        <p>author: {{ image.author }}</p>
+    
+        <button type="button" (click)="remove(image.id, i)">remove from favorites</button>
+      </div>
+  </div>
 
 
 
