@@ -1,12 +1,10 @@
 # About the app 
 
 
-
-- the app fetches uses Mockaroo api to fetch random blog post data. 
-- main page fetches blogs and display them as a list of blogs. 
-- each blog has two buttons upvote, downvote and a link directing to blog detail page. 
-
-- used a service to handle fetching, posting, upvote, downvote
+ - main page fetches a list of image posts 
+ - each image post containt two buttons, one for adding to favorites and one for removing it
+ - detail link forward you to a page containing details about the image post. 
+ - favorites are saved using browser's localStorage.
 
 
 
